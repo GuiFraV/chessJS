@@ -44,3 +44,22 @@ function createBoard(){
 }
 
 createBoard();
+
+const allSquares = document.querySelectorAll('#gameboard .square')
+
+allSquares.forEach(square => {
+    square.addEventListener('dragstart', dragStart)
+    square.addEventListener('dragover', dragOver)
+})
+
+let startPositionId;
+let draggedElement;
+
+function dragStart(e){
+    startPositionId = e.target.parentNode.getAttribute('square-id')
+    draggedElement = e.target
+}
+
+function dragOver(e){
+    e.preventDefault()
+}
