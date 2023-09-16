@@ -2,6 +2,8 @@
     width: 320px;
     height: 320px;
     background-color: black;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .square {
