@@ -20,9 +20,10 @@ function createBoard(){
         const square = document.createElement('div')
         square.classList.add('square')
         square.innerHTML = startPiece
+        square.firstChild && square.firstChild.setAttribute('draggable', true)
         square.setAttribute('square-id', i)
         // square.classList.add('beige')
-        const row = Math.floor(63 - i / 8) + 1
+        const row = Math.floor( (63 - i) / 8) + 1
         if(row % 2 === 0){
             square.classList.add(i % 2 === 0 ? 'beige' : 'brown')
         }else {
