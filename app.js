@@ -47,7 +47,7 @@ function createBoard(){
 
 createBoard();
 
-const allSquares = document.querySelectorAll('#gameboard .square')
+const allSquares = document.querySelectorAll('.square')
 
 allSquares.forEach(square => {
     square.addEventListener('dragstart', dragStart)
@@ -87,3 +87,10 @@ function changePlayer(){
 
     }
 }
+
+function reverseIds(){
+    const allSquares = document.querySelectorAll('.square')
+    allSquares.forEach((square, i) =>
+        square.setAttribute('square-id', (width * width -1)-i))
+}
+
